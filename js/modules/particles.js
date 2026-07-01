@@ -15,11 +15,11 @@ export const Particles = {
 
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
+      particle.className = 'particle';
       particle.style.cssText = `
         position: absolute;
         width: ${Math.random() * 4 + 1}px;
         height: ${Math.random() * 4 + 1}px;
-        background: rgba(233, 69, 96, ${Math.random() * 0.5 + 0.1});
         border-radius: 50%;
         left: ${Math.random() * 100}%;
         top: ${Math.random() * 100}%;
@@ -31,6 +31,15 @@ export const Particles = {
 
     const style = document.createElement('style');
     style.textContent = `
+      .particle {
+        background: var(--color-accent);
+        opacity: 0.4;
+      }
+      
+      [data-theme="light"] .particle {
+        opacity: 0.6;
+      }
+      
       @keyframes float {
         0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
         50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
