@@ -1,82 +1,680 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/miestilo.css">
-  <title>Brian Osmar Treviño Martínez</title>
+  <meta name="description" content="Brian Osmar Treviño Martínez - Ingeniero en Sistemas Computacionales | Desarrollador Full Stack especializado en Java, Spring Boot, React y bases de datos.">
+  <meta name="keywords" content="desarrollador, ingeniero, sistemas, java, spring boot, react, javascript, mysql, mongodb, firebase, python">
+  <meta name="author" content="Brian Osmar Treviño Martínez">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Brian Osmar Treviño Martínez | Ingeniero en Sistemas">
+  <meta property="og:description" content="Desarrollador Full Stack especializado en Java, Spring Boot, React y bases de datos.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/profile/wapo.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/layout.css">
+  
+  <title>Brian Osmar Treviño Martínez | Ingeniero en Sistemas</title>
 </head>
-
 <body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader__spinner"></div>
+  </div>
 
-  <nav>
-    <a href="curriculum.html">
-      <ion-icon name="document-text-outline"></ion-icon>
-    </a>
-    <a href="index.html">
-      <ion-icon name="home-outline"></ion-icon>
-    </a>
-    <a href="cursos.html">
-      <ion-icon name="book-outline"></ion-icon>
-    </a>
+  <!-- Navigation -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+    <div class="nav__container">
+      <a href="#hero" class="nav__logo">BT</a>
+      <div class="nav__links">
+        <a href="#about" class="nav__link">Sobre Mí</a>
+        <a href="#technologies" class="nav__link">Tecnologías</a>
+        <a href="#projects" class="nav__link">Proyectos</a>
+        <a href="#experience" class="nav__link">Experiencia</a>
+        <a href="#contact" class="nav__link">Contacto</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
-  <header class="banner">
-    <section>
-        <figure>
-            <img src="items/wapo.jpg" alt="perfil" width="400" height="400">
-        </figure>
-    </section>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__content">
+      <a href="#about" class="mobile-menu__link">Sobre Mí</a>
+      <a href="#technologies" class="mobile-menu__link">Tecnologías</a>
+      <a href="#projects" class="mobile-menu__link">Proyectos</a>
+      <a href="#experience" class="mobile-menu__link">Experiencia</a>
+      <a href="#contact" class="mobile-menu__link">Contacto</a>
+    </div>
+  </div>
 
-    <section>
-        <div>
-            <h1>Brian Osmar Treviño Martinez</h1>
-            <p>Ingeniero en sistemas computacionales</p>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__particles" id="particles"></div>
+    <div class="hero__content">
+      <div class="hero__text">
+        <p class="hero__greeting reveal">Hola, soy</p>
+        <h1 class="hero__name reveal">
+          <span class="gradient-text">Brian Osmar</span>
+          <br>Treviño Mtz.
+        </h1>
+        <div class="hero__title reveal">
+          <span class="hero__title-static">Ingeniero en</span>
+          <span class="hero__title-dynamic" id="typed-text"></span>
+          <span class="typing-cursor">|</span>
         </div>
-    </section>
-</header>
-
-  <main class="contenedor_principal">
-
-
-    <section class="contenedor2">
-      <div class="caja2">
-        <h2>Sobre mí</h2>
-        <div>
-          <h3>¿Quién soy?</h3>
-          <p>Un programador de mentalidad analítica y enfoque en la eficiencia.</p>
+        <p class="hero__description reveal">
+          Apasionado por crear soluciones tecnológicas eficientes con enfoque en calidad de código y metodologías ágiles.
+        </p>
+        <div class="hero__buttons reveal">
+          <a href="#projects" class="btn btn--primary">
+            <i class="fas fa-rocket"></i>
+            Ver Proyectos
+          </a>
+          <a href="#contact" class="btn btn--secondary">
+            <i class="fas fa-envelope"></i>
+            Contactar
+          </a>
+          <a href="Docs/cv_espanol_BOTM.pdf" download class="btn btn--secondary">
+            <i class="fas fa-download"></i>
+            Descargar CV
+          </a>
         </div>
-        <div>
-          <h3>¿En qué me especializo?</h3>
-          <p>En el desarrollo de backend y la creación de recursos visuales para frontend en Photoshop, implementando
-            metodologías como TDD y Kanban.</p>
-        </div>
-        <div>
-          <h3>¿Quién soy?</h3>
-          <p>Tengo un gran enfoque en la precisión y la optimización de procesos. No solo programo, sino que mi meta es
-            que el software sea confiable, intuitivo y funcional, analizando cada detalle.</p>
+        <div class="hero__social reveal">
+          <a href="https://github.com/Novawhere" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/osmar-trevino/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.instagram.com/osmartm26/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
         </div>
       </div>
-      <div class="caja3">
-        <h2 class="titulo">Redes Sociales</h2>
-        <div class="redes">
-          <a href="https://www.instagram.com/osmartm26/" target="_blank">
-            <img src="items/insta.png" alt="Instagram" class="icono">
-          </a>
-          <a href="https://www.facebook.com/OsmarTM26/" target="_blank">
-            <img src="items/face.png" alt="Facebook" class="icono">
-          </a>
-          <a href="https://github.com/Novawhere" target="_blank">
-            <img src="items/twit.png" alt="Twitter" class="icono">
-          </a>
+      <div class="hero__image reveal">
+        <div class="hero__image-wrapper">
+          <img src="assets/images/profile/wapo.jpg" alt="Brian Osmar Treviño Martínez" class="hero__photo">
+          <div class="hero__image-border"></div>
+          <div class="hero__image-dots"></div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
 
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__subtitle">Conóceme</p>
+        <h2 class="section__title">Sobre Mí</h2>
+      </div>
+      <div class="about__content">
+        <div class="about__text reveal">
+          <p>
+            Ingeniero en Sistemas Computacionales con experiencia en desarrollo de software usando 
+            <span class="highlight">Java</span>, <span class="highlight">C++</span> y <span class="highlight">JavaScript</span>, 
+            y manejo de bases de datos como <span class="highlight">MySQL</span> y <span class="highlight">MongoDB</span>.
+          </p>
+          <p>
+            Apasionado por crear soluciones tecnológicas eficientes, con enfoque en calidad de código 
+            (<span class="highlight">TDD</span>) y metodologías ágiles (<span class="highlight">Kanban</span>). 
+            Busco oportunidades para aplicar mis habilidades, así como tener la posibilidad de crecer 
+            profesionalmente en el ámbito personal y laboral.
+          </p>
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__number" data-count="4">0</span>
+              <span class="stat__label">Proyectos Completados</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number" data-count="15">0</span>
+              <span class="stat__label">Tecnologías</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number" data-count="4">0</span>
+              <span class="stat__label">Certificaciones</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__image reveal">
+          <div class="about__image-wrapper">
+            <img src="assets/images/profile/wapo.jpg" alt="Brian Osmar Treviño Martínez" class="about__photo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Section -->
+  <section class="section technologies" id="technologies">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__subtitle">Mi Stack</p>
+        <h2 class="section__title">Tecnologías</h2>
+      </div>
+      <div class="tech__grid">
+        <!-- Frontend -->
+        <div class="tech__category reveal">
+          <div class="tech__category-header">
+            <i class="fas fa-code"></i>
+            <h3>Frontend</h3>
+          </div>
+          <div class="tech__items">
+            <div class="tech__item">
+              <i class="fab fa-js-square"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="tech__item">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="tech__item">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="tech__item">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="tech__item">
+              <i class="fab fa-bootstrap"></i>
+              <span>Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="tech__category reveal">
+          <div class="tech__category-header">
+            <i class="fas fa-server"></i>
+            <h3>Backend</h3>
+          </div>
+          <div class="tech__items">
+            <div class="tech__item">
+              <i class="fab fa-java"></i>
+              <span>Java</span>
+            </div>
+            <div class="tech__item">
+              <i class="fas fa-leaf"></i>
+              <span>Spring Boot</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="tech__category reveal">
+          <div class="tech__category-header">
+            <i class="fas fa-database"></i>
+            <h3>Bases de Datos</h3>
+          </div>
+          <div class="tech__items">
+            <div class="tech__item">
+              <i class="fas fa-database"></i>
+              <span>MySQL</span>
+            </div>
+            <div class="tech__item">
+              <i class="fas fa-database"></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="tech__item">
+              <i class="fas fa-fire"></i>
+              <span>Firebase</span>
+            </div>
+            <div class="tech__item">
+              <i class="fas fa-leaf"></i>
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Analysis -->
+        <div class="tech__category reveal">
+          <div class="tech__category-header">
+            <i class="fas fa-chart-line"></i>
+            <h3>Análisis de Datos</h3>
+          </div>
+          <div class="tech__items">
+            <div class="tech__item">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+            <div class="tech__item">
+              <i class="fas fa-book"></i>
+              <span>Jupyter Lab</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="tech__category reveal">
+          <div class="tech__category-header">
+            <i class="fas fa-tools"></i>
+            <h3>DevOps & Herramientas</h3>
+          </div>
+          <div class="tech__items">
+            <div class="tech__item">
+              <i class="fab fa-git-alt"></i>
+              <span>Git</span>
+            </div>
+            <div class="tech__item">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__subtitle">Mi Trabajo</p>
+        <h2 class="section__title">Proyectos Destacados</h2>
+      </div>
+      <div class="projects__grid">
+        <!-- Project 1: DHL (Más reciente) -->
+        <article class="project-card reveal">
+          <div class="project-card__carousel">
+            <div class="carousel__track">
+              <img src="assets/images/projects/tesis-dhl/portada.png" alt="Gestión y administración de tickets DHL" class="carousel__slide active">
+              <img src="assets/images/projects/tesis-dhl/screenshot1.png" alt="Gestión y administración de tickets DHL - Captura 1" class="carousel__slide">
+              <img src="assets/images/projects/tesis-dhl/screenshot2.png" alt="Gestión y administración de tickets DHL - Captura 2" class="carousel__slide">
+            </div>
+            <div class="carousel__dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Gestión y administración de tickets DHL</h3>
+            <p class="project-card__date">
+              <i class="fas fa-calendar"></i> Noviembre 2025 – Diciembre 2025
+            </p>
+            <p class="project-card__description">
+              Sistema de soporte técnico para gestión de tickets de envíos y recursos humanos. 
+              Los trabajadores podían ver, aceptar y dar seguimiento a los casos publicados en el sistema.
+            </p>
+            <ul class="project-card__features">
+              <li><i class="fas fa-check"></i> Java, MySQL y FlatLaf</li>
+              <li><i class="fas fa-check"></i> Generación de reportes con iText</li>
+              <li><i class="fas fa-check"></i> Seguimiento de casos en tiempo real</li>
+              <li><i class="fas fa-check"></i> Gestión de envíos y recursos humanos</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="AGREGAR_URL_GITHUB" class="btn btn--sm" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> Código
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Licitaciones IA -->
+        <article class="project-card reveal">
+          <div class="project-card__carousel">
+            <div class="carousel__track">
+              <img src="assets/images/projects/licitaciones-ia/portada.png" alt="Sistema de Análisis de Licitaciones con IA" class="carousel__slide active">
+              <img src="assets/images/projects/licitaciones-ia/screenshot1.png" alt="Sistema de Análisis de Licitaciones con IA - Captura 1" class="carousel__slide">
+              <img src="assets/images/projects/licitaciones-ia/screenshot2.png" alt="Sistema de Análisis de Licitaciones con IA - Captura 2" class="carousel__slide">
+            </div>
+            <div class="carousel__dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Sistema de Análisis de Licitaciones con IA</h3>
+            <p class="project-card__date">
+              <i class="fas fa-calendar"></i> Septiembre 2025 – Octubre 2025
+            </p>
+            <p class="project-card__description">
+              Utiliza iText para extraer texto de documentos PDF (50–500+ páginas) y un módulo de IA que analiza 
+              el cumplimiento de requisitos, detecta omisiones y sugiere mejoras.
+            </p>
+            <ul class="project-card__features">
+              <li><i class="fas fa-check"></i> Interfaz creada en JavaFX</li>
+              <li><i class="fas fa-check"></i> Visualización de resultados</li>
+              <li><i class="fas fa-check"></i> Reportes dinámicos</li>
+              <li><i class="fas fa-check"></i> Evaluación automatizada</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="AGREGAR_URL_GITHUB" class="btn btn--sm" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> Código
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Sakura Inn -->
+        <article class="project-card reveal">
+          <div class="project-card__carousel">
+            <div class="carousel__track">
+              <img src="assets/images/projects/sakura-inn/portada.png" alt="Sakura Inn" class="carousel__slide active">
+              <img src="assets/images/projects/sakura-inn/screenshot1.png" alt="Sakura Inn - Captura 1" class="carousel__slide">
+              <img src="assets/images/projects/sakura-inn/screenshot2.png" alt="Sakura Inn - Captura 2" class="carousel__slide">
+            </div>
+            <div class="carousel__dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Sakura Inn</h3>
+            <p class="project-card__date">
+              <i class="fas fa-calendar"></i> Junio 2025 – Agosto 2025
+            </p>
+            <p class="project-card__description">
+              Sitio web de reservas hoteleras con enfoque en diseño adaptable, seguridad y servicios en la nube.
+            </p>
+            <ul class="project-card__features">
+              <li><i class="fas fa-check"></i> HTML, CSS, JavaScript y Bootstrap</li>
+              <li><i class="fas fa-check"></i> Firebase y Firestore para autenticación</li>
+              <li><i class="fas fa-check"></i> Gestión de datos en tiempo real</li>
+              <li><i class="fas fa-check"></i> Estructura modular y escalable</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="AGREGAR_URL_GITHUB" class="btn btn--sm" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> Código
+              </a>
+              <a href="AGREGAR_URL_DEMO" class="btn btn--sm" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: ISR-AFORE-INFONAVIT -->
+        <article class="project-card reveal">
+          <div class="project-card__carousel">
+            <div class="carousel__track">
+              <img src="assets/images/projects/tickets-isr/portada.png" alt="Sistema de Tickets ISR-AFORE-INFONAVIT" class="carousel__slide active">
+              <img src="assets/images/projects/tickets-isr/screenshot1.png" alt="Sistema de Tickets ISR-AFORE-INFONAVIT - Captura 1" class="carousel__slide">
+              <img src="assets/images/projects/tickets-isr/screenshot2.png" alt="Sistema de Tickets ISR-AFORE-INFONAVIT - Captura 2" class="carousel__slide">
+            </div>
+            <div class="carousel__dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-card__title">Sistema de Tickets ISR-AFORE-INFONAVIT</h3>
+            <p class="project-card__date">
+              <i class="fas fa-calendar"></i> Enero 2025 – Mayo 2025
+            </p>
+            <p class="project-card__description">
+              Aplicación de escritorio desarrollada completamente en Java, enfocada en el cálculo automatizado 
+              de deducciones fiscales (ISR, Afore e Infonavit).
+            </p>
+            <ul class="project-card__features">
+              <li><i class="fas fa-check"></i> MySQL, iText y Apache POI</li>
+              <li><i class="fas fa-check"></i> Generación de reportes PDF y Excel</li>
+              <li><i class="fas fa-check"></i> TDD y Kanban</li>
+              <li><i class="fas fa-check"></i> Interfaz moderna con FlatLaf</li>
+            </ul>
+            <div class="project-card__links">
+              <a href="AGREGAR_URL_GITHUB" class="btn btn--sm" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> Código
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__subtitle">Mi Trayectoria</p>
+        <h2 class="section__title">Experiencia, Educación y Certificaciones</h2>
+      </div>
+      <div class="experience__grid">
+        <!-- Experience -->
+        <div class="experience__column reveal">
+          <h3 class="experience__column-title">
+            <i class="fas fa-briefcase"></i> Experiencia
+          </h3>
+          <div class="experience__items">
+            <div class="experience__item">
+              <div class="experience__item-marker"></div>
+              <div class="experience__item-content">
+                <h4>Desarrollador Freelance</h4>
+                <p class="experience__item-place">Gestión y administración de tickets DHL</p>
+                <p class="experience__item-date">Noviembre 2025 – Diciembre 2025</p>
+              </div>
+            </div>
+            <div class="experience__item">
+              <div class="experience__item-marker"></div>
+              <div class="experience__item-content">
+                <h4>Desarrollador Freelance</h4>
+                <p class="experience__item-place">Sistema de Análisis de Licitaciones con IA</p>
+                <p class="experience__item-date">Septiembre 2025 – Octubre 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="experience__column reveal">
+          <h3 class="experience__column-title">
+            <i class="fas fa-graduation-cap"></i> Educación
+          </h3>
+          <div class="experience__items">
+            <div class="experience__item">
+              <div class="experience__item-marker"></div>
+              <div class="experience__item-content">
+                <h4>Ingeniería en Sistemas Computacionales</h4>
+                <p class="experience__item-place">Universidad Tres Culturas - Plantel Ecatepec</p>
+                <p class="experience__item-date">Agosto 2022 - Agosto 2025</p>
+              </div>
+            </div>
+            <div class="experience__item">
+              <div class="experience__item-marker"></div>
+              <div class="experience__item-content">
+                <h4>Maestría en Educación</h4>
+                <p class="experience__item-place">Universidad Tres Culturas - Plantel Ecatepec</p>
+                <p class="experience__item-date">Septiembre 2025 - Por concluir en Diciembre 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="experience__column reveal">
+          <h3 class="experience__column-title">
+            <i class="fas fa-certificate"></i> Certificaciones
+          </h3>
+          <div class="experience__items">
+            <div class="experience__item">
+              <div class="experience__item-marker"></div>
+              <div class="experience__item-content">
+                <h4>Desarrollo con IA: programa con agentes</h4>
+                <p class="experience__item-place">Big School (Mouredev)</p>
+              </div>
+            </div>
+            <div class="experience__item">
+              <div class="experience__item-marker"></div>
+              <div class="experience__item-content">
+                <h4>Bases y conceptos clave de la IA</h4>
+                <p class="experience__item-place">LOTTUS</p>
+              </div>
+            </div>
+            <div class="experience__item">
+              <div class="experience__item-marker"></div>
+              <div class="experience__item-content">
+                <h4>PottencIA tu carrera: Introducción a la IA</h4>
+                <p class="experience__item-place">LOTTUS</p>
+              </div>
+            </div>
+            <div class="experience__item">
+              <div class="experience__item-marker"></div>
+              <div class="experience__item-content">
+                <h4>JavaScript, Introducción a la IA</h4>
+                <p class="experience__item-place">NETACAD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="experience__column reveal">
+          <h3 class="experience__column-title">
+            <i class="fas fa-cogs"></i> Habilidades
+          </h3>
+          <div class="skills__grid">
+            <div class="skill-item">
+              <i class="fas fa-users"></i>
+              <span>Trabajo en equipo</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-brain"></i>
+              <span>Pensamiento crítico</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-sync-alt"></i>
+              <span>Adaptabilidad</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-lightbulb"></i>
+              <span>Pensamiento interdisciplinario</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-star"></i>
+              <span>Liderazgo</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-project-diagram"></i>
+              <span>Análisis de información</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-language"></i>
+              <span>Inglés (B2)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__subtitle">Hablemos</p>
+        <h2 class="section__title">Contacto</h2>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__info reveal">
+          <h3>¿Tienes un proyecto en mente?</h3>
+          <p>Estoy disponible para nuevas oportunidades y colaboraciones. ¡Hablemos!</p>
+          <div class="contact__details">
+            <div class="contact__detail">
+              <i class="fas fa-phone"></i>
+              <span>(+52) 55-1294-8978</span>
+            </div>
+            <div class="contact__detail">
+              <i class="fas fa-envelope"></i>
+              <span>trevmaros2602@gmail.com</span>
+            </div>
+            <div class="contact__detail">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Ciudad de México, México</span>
+            </div>
+          </div>
+          <div class="contact__social">
+            <a href="https://github.com/Novawhere" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/osmar-trevino/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/osmartm26/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <form class="contact__form reveal" id="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="subject" class="form-label">Asunto</label>
+            <input type="text" id="subject" name="subject" class="form-input" placeholder="¿En qué puedo ayudarte?" required>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tu mensaje..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__text">
+          &copy; 2026 Brian Osmar Treviño Martínez. Todos los derechos reservados.
+        </p>
+        <p class="footer__text">
+          Diseñado con <i class="fas fa-heart"></i> y mucho café
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+    <i class="fas fa-sun"></i>
+  </button>
+
+  <!-- Back to Top -->
+  <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
-
 </html>
