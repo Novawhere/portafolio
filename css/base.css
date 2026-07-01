@@ -5,12 +5,12 @@
 /* CSS Custom Properties */
 :root {
   /* Colors */
-  --color-primary: #8B0000;
-  --color-primary-light: #a52a2a;
-  --color-primary-dark: #5c0000;
+  --color-primary: #B8860B;
+  --color-primary-light: #DAA520;
+  --color-primary-dark: #8B6914;
   --color-secondary: #1a1a2e;
-  --color-accent: #e94560;
-  --color-accent-light: #ff6b6b;
+  --color-accent: #FFD700;
+  --color-accent-light: #FFED4A;
   
   /* Neutral colors */
   --color-white: #ffffff;
@@ -195,6 +195,13 @@ body {
   color: var(--color-white);
   text-decoration: none;
   letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo-img {
+  height: 40px;
+  width: auto;
 }
 
 [data-theme="light"] .nav__logo {
@@ -536,6 +543,21 @@ body {
   color: var(--color-white);
   transform: translateY(-3px);
   border-color: var(--color-accent);
+}
+
+.social-icon__img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: filter var(--transition-fast);
+}
+
+[data-theme="light"] .social-icon__img {
+  filter: none;
+}
+
+.social-icon:hover .social-icon__img {
+  filter: brightness(0) invert(1);
 }
 
 /* ========================================
