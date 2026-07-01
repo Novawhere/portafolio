@@ -622,12 +622,25 @@ body {
 
 .about__image-wrapper {
   position: relative;
+  padding: var(--space-4);
+  background: linear-gradient(135deg, var(--color-accent), transparent);
+  border-radius: var(--radius-lg);
+}
+
+.about__image-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  animation: pulseGlow 2s ease-in-out infinite;
 }
 
 .about__photo {
   width: 100%;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
+  display: block;
 }
 
 /* ========================================
@@ -1335,6 +1348,11 @@ body {
   
   .about__stats {
     grid-template-columns: 1fr;
+  }
+  
+  .about__image-wrapper {
+    max-width: 300px;
+    margin: 0 auto;
   }
   
   .projects__grid {
