@@ -82,7 +82,11 @@
   --bg-secondary: #ffffff;
   --bg-card: rgba(0, 0, 0, 0.02);
   --bg-card-hover: rgba(0, 0, 0, 0.05);
-  --color-primary: #a52a2a;
+  --color-primary: #B8860B;
+  --color-primary-light: #DAA520;
+  --color-primary-dark: #8B6914;
+  --color-accent: #FFD700;
+  --color-accent-light: #FFED4A;
   --color-gray-900: #212529;
   --color-gray-200: #495057;
 }
@@ -96,6 +100,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 html {
@@ -112,6 +117,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ========================================

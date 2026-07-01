@@ -9,12 +9,25 @@ export const ThemeManager = {
     this.icon = this.toggle?.querySelector('i');
     this.storageKey = config.storageKey || 'portfolio-theme';
 
-    const savedTheme = localStorage.getItem(this.storageKey) || config.default || 'dark';
-    this.setTheme(savedTheme);
+    // Detect system preference
+    this.systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
+    // Get saved theme or use system preference
+    const savedTheme = localStorage.getItem(this.storageKey);
+    const defaultTheme = savedTheme || (this.systemPrefersDark.matches ? 'dark' : 'light');
+    this.setTheme(defaultTheme);
+
+    // Listen for toggle click
     if (this.toggle) {
       this.toggle.addEventListener('click', () => this.toggleTheme());
     }
+
+    // Listen for system preference changes
+    this.systemPrefersDark.addEventListener('change', (e) => {
+      if (!localStorage.getItem(this.storageKey)) {
+        this.setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
   },
 
   setTheme(theme) {
