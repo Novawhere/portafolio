@@ -28,3 +28,11 @@ build/
 # Optional: if you add package.json later
 # package-lock.json
 # yarn.lock
+
+# AI agent files (privados, no subir a git)
+AGENTS.md
+opencode.json
+.opencode/
+.agents/
+spec/
+context.md
