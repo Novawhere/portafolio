@@ -11,20 +11,24 @@ export const Particles = {
   },
 
   createParticles() {
-    const particleCount = 50;
+    const particleCount = 40;
 
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
+      const size = Math.random() * 12 + 6;
       particle.style.cssText = `
         position: absolute;
-        width: ${Math.random() * 4 + 1}px;
-        height: ${Math.random() * 4 + 1}px;
-        border-radius: 50%;
+        width: 0;
+        height: 0;
+        border-left: ${size / 2}px solid transparent;
+        border-right: ${size / 2}px solid transparent;
+        border-bottom: ${size}px solid var(--color-accent);
         left: ${Math.random() * 100}%;
         top: ${Math.random() * 100}%;
-        animation: float ${Math.random() * 3 + 2}s ease-in-out infinite;
-        animation-delay: ${Math.random() * 2}s;
+        animation: float ${Math.random() * 4 + 3}s ease-in-out infinite;
+        animation-delay: ${Math.random() * 3}s;
+        transform: rotate(${Math.random() * 360}deg);
       `;
       this.container.appendChild(particle);
     }
@@ -32,17 +36,18 @@ export const Particles = {
     const style = document.createElement('style');
     style.textContent = `
       .particle {
-        background: var(--color-accent);
-        opacity: 0.4;
+        opacity: 0.6;
+        filter: drop-shadow(0 0 3px var(--color-accent));
       }
       
       [data-theme="light"] .particle {
-        opacity: 0.6;
+        opacity: 0.8;
+        filter: drop-shadow(0 0 4px var(--color-accent));
       }
       
       @keyframes float {
-        0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
-        50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+        0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.4; }
+        50% { transform: translateY(-30px) translateX(15px) rotate(180deg); opacity: 0.9; }
       }
     `;
     document.head.appendChild(style);
