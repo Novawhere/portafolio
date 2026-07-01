@@ -212,6 +212,18 @@ body {
   width: auto;
 }
 
+.nav__logo-img--light {
+  display: none;
+}
+
+[data-theme="light"] .nav__logo-img--dark {
+  display: none;
+}
+
+[data-theme="light"] .nav__logo-img--light {
+  display: block;
+}
+
 [data-theme="light"] .nav__logo {
   color: var(--color-gray-900);
 }
