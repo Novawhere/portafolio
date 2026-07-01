@@ -571,10 +571,8 @@ body {
    ABOUT SECTION
    ======================================== */
 .about__content {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: var(--space-12);
-  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about__text p {
@@ -618,38 +616,6 @@ body {
   color: var(--color-gray-500);
   margin-top: var(--space-2);
   display: block;
-}
-
-.about__image-wrapper {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-}
-
-.about__image-wrapper::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-lg);
-  box-shadow: inset 0 0 30px rgba(233, 69, 96, 0.15);
-  pointer-events: none;
-  transition: box-shadow 0.3s ease;
-}
-
-.about__image-wrapper:hover::after {
-  box-shadow: inset 0 0 40px rgba(233, 69, 96, 0.25);
-}
-
-.about__photo {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xl);
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.about__image-wrapper:hover .about__photo {
-  transform: scale(1.02);
 }
 
 /* ========================================
@@ -1357,11 +1323,6 @@ body {
   
   .about__stats {
     grid-template-columns: 1fr;
-  }
-  
-  .about__image-wrapper {
-    max-width: 300px;
-    margin: 0 auto;
   }
   
   .projects__grid {
