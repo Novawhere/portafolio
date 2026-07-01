@@ -28,6 +28,21 @@
   color: var(--color-accent);
 }
 
+.badge--progress {
+  background: rgba(255, 213, 43, 0.2);
+  color: #FFD52B;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+[data-theme="light"] .badge--progress {
+  background: rgba(154, 114, 9, 0.2);
+  color: #9A7209;
+}
+
 /* ========================================
    TOOLTIP
    ======================================== */
